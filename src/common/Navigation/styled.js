@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { ReactComponent as IconCamera } from "../../images/iconCamera.svg";
 import { ReactComponent as IconSearch } from "../../images/iconSearch.svg";
 
@@ -41,10 +42,11 @@ export const NavGroup = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
@@ -99,7 +101,9 @@ export const NavItem = styled.li`
   }
 `;
 
-export const NavLink = styled.a`
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+  activeClassName: "active",
+}))`
   color: ${({ theme }) => theme.color.white};
   align-content: center;
   font-size: 14px;
@@ -108,11 +112,13 @@ export const NavLink = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   padding: 8px 24px;
-  border: 1px solid
-    ${({ $isActive, theme }) => ($isActive ? theme.color.white : "transparent")};
   border-radius: 24px;
   cursor: pointer;
   transition: background-color 0.3s;
+
+  &.active {
+    border: 1px solid ${({ theme }) => theme.color.white};
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-size: 12px;

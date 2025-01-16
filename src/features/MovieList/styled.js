@@ -8,7 +8,7 @@ export const Content = styled.div`
   justify-content: center;
   justify-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: minmax(288px, 1fr);
     gap: 16px;
     margin: 16px 0;

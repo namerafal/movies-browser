@@ -9,11 +9,12 @@ export const theme = {
     darkergrey: "#7E839A",
     black: "#18181B",
   },
-  shadows: {
+  shadow: {
     elevation: "0px 4px 12px 0px #BAC7D580",
   },
-  breakpoints: {
+  breakpoint: {
     mobileMax: 767,
   },
 };
+
 

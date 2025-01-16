@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     display: grid;
+    grid-template-columns: 1fr;
     padding-top: 24px;
     gap: 24px;
     justify-content: center;
@@ -37,6 +38,7 @@ export const NavGroup = styled.div`
   gap: 80px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    justify-content: space-between;
     gap: 24px;
   }
 `;
@@ -132,7 +134,8 @@ export const SearchContainer = styled.div`
   padding: 12px 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    width: 288px;
+    width: 100%;
+    min-width: 288px;
     height: 44px;
     gap: 8px;
     padding: 14px 16px;
